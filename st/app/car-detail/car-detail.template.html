@@ -1,0 +1,85 @@
+<div class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">st</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="/">Home</a></li>
+                <li><a ng-href="/">Contact</a></li>
+                <li style="width: 270px; padding: 8px 0;">
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col col-lg-4 col-lg-offset-1">
+            <img src="{{$ctrl.mainImageUrl}}" style="width: 100%; cursor: pointer;">
+        </div>
+
+        <div class="col col-lg-4 col-lg-offset-1">
+            <h1>{{$ctrl.car.name}}</h1>
+
+            <p>{{$ctrl.car.description}}</p>
+
+            <div class="row">
+                <div class="col col-lg-3" ng-repeat="img in $ctrl.car.images">
+                    <img ng-src="{{img}}" ng-click="$ctrl.setImage(img)" style="width: 100%;  cursor: pointer;"/>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<ul class="row">
+    <li class="col col-lg-2">
+        <span>Availability and Networks</span>
+        <dl>
+            <dt>Availability</dt>
+            <dd ng-repeat="availability in $ctrl.car.availability">{{availability}}</dd>
+        </dl>
+    </li>
+    <li class="col col-lg-2">
+        <span>Battery</span>
+        <dl>
+            <dt>Type</dt>
+            <dd>{{$ctrl.car.battery.type}}</dd>
+            <dt>Talk Time</dt>
+            <dd>{{$ctrl.car.battery.talkTime}}</dd>
+            <dt>Standby time (max)</dt>
+            <dd>{{$ctrl.car.battery.standbyTime}}</dd>
+        </dl>
+    </li>
+    <li class="col col-lg-2">
+        <span>Storage and Memory</span>
+        <dl>
+            <dt>RAM</dt>
+            <dd>{{$ctrl.car.storage.ram}}</dd>
+            <dt>Internal Storage</dt>
+            <dd>{{$ctrl.car.storage.flash}}</dd>
+        </dl>
+    </li>
+
+    <li class="col col-lg-2">
+        <span>Connectivity</span>
+        <dl>
+            <dt>Network Support</dt>
+            <dd>{{$ctrl.car.connectivity.cell}}</dd>
+            <dt>WiFi</dt>
+            <dd>{{$ctrl.car.connectivity.wifi}}</dd>
+            <dt>Bluetooth</dt>
+            <dd>{{$ctrl.car.connectivity.bluetooth}}</dd>
+        </dl>
+    </li>
+
+    <li class="col col-lg-2">
+        <span>Display</span>
+        <dl>
+            <dt>Screen resolution</dt>
+            <dd>1980x1280</dd>
+    </li>
+</ul>
