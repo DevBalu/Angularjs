@@ -15,6 +15,7 @@ angular.module('mapiApp')
           $scope.query = $scope.text;
 
           $http.get('http://seasonvar.ru/autocomplete.php?query=' + $scope.query).then(function (response) {
+
               $scope.response = response;
 
               var id =  $scope.response.data.id;
@@ -31,5 +32,5 @@ angular.module('mapiApp')
 
 
           });
-      }
+      };
   }]);
