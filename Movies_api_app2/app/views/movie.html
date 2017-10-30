@@ -1,13 +1,9 @@
-
 <div class="container">
-    <video width="400" controls ng-if="curentVideo">
+    <video id="videoPlayer" width="400" controls ng-if="curentVideo">
         <source src="{{curentVideo}}" type="video/mp4">
     </video>
 
-
     <div ng-repeat="playlist in movie.playlist">
-        <a ng-click="setVideo(playlist.file)"></a>{{playlist.comment}}
+        <a ng-click="setVideo(playlist.file)">{{playlist.comment}}</a>
     </div>
-
-
 </div>

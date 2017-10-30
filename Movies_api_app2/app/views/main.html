@@ -1,36 +1,32 @@
-<div>
-  <div class="navbar navbar-default" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
+    <div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
 
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#!/">MOVIES</a>
+        </div>
 
-        <a class="navbar-brand" href="#!/">MOVIES</a>
-      </div>
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#/">Home</a></li>
+            <li>
+              <div class="input-group" style="padding: 8px 0;">
+                  <input type="text" class="form-control" placeholder="Username" ng-model="text" ng-keydown="search()">
+              </div>
+            </li>
+          </ul>
+        </div><!-- END navbar-collapse -->
 
-      <div class="collapse navbar-collapse" id="js-navbar-collapse">
+      </div><!-- END container -->
+    </div><!-- END navbar -->
 
-        <ul class="nav navbar-nav">
-          <li><a href="#/">Home</a></li>
-          <li>
-            <div class="input-group" style="padding: 8px 0;">
-                <input type="text" class="form-control" placeholder="Username" ng-model="text" ng-keydown="search()">
-            </div>
-          </li>
-        </ul>
-      </div>
-
-    </div>
+  <div class="container">
+    <h5 ng-repeat="(key, value) in result">
+      <a href="#!/movie/{{value.id}}"><h4>{{value.suggestion}}</h4></a>
+    </h5>
   </div>
-</div>
-<div class="container">
-  <h5 ng-repeat="(key, value) in result">
-    <a href="#!/movie/{{value.id}}"><h4>{{value.suggestion}}</h4></a>
-  </h5>
-
-</div>

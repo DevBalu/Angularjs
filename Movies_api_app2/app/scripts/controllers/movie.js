@@ -8,17 +8,19 @@
  * Controller of the mapiApp
  */
 angular.module('mapiApp')
-  .controller('MovieCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
+	.controller('MovieCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
 
-      $scope.setVideo = function (src) {
-          $scope.curentVideo = src;
-      };
+		$scope.setVideo = function (src) {
+			$scope.curentVideo = src;
+			var result = angular.element("#videoPlayer")[0];
+			result.pause();
+			result.load();
+			result.play();
+		};
 
-      $http.get('http://datalock.ru/playlist/0/' + $routeParams.movieId + '/list.xml').then(function (response) {
+		$http.get('http://datalock.ru/playlist/0/' + $routeParams.movieId + '/list.xml').then(function (response) {
 
-          $scope.movie = response.data;
-          $scope.setVideo($scope.movie.playlist[0].file);
-
-      })
-
-  }]);
+			$scope.movie = response.data;
+			$scope.setVideo($scope.movie.playlist[0].file);
+		})
+	}]);
